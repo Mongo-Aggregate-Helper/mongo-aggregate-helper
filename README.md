@@ -9,6 +9,8 @@ The **Mongo Aggregate Helper** is a lightweight and intuitive library designed t
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+  - [Using MongoClient](#using-mongodb-client)
+  - [Using Mongoose](#using-mongoose)
 - [API](#api)
 - [Contributing](#contributing)
 - [License](#license)
