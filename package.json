@@ -1,6 +1,6 @@
 {
   "name": "mongo-aggregate-helper",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A lightweight and user-friendly helper library for easily constructing and executing MongoDB aggregation pipelines. Streamline your data processing with a clean API and versatile functionality.",
   "main": "dist/index.js",
   "directories": {
@@ -15,7 +15,21 @@
   "keywords": [
     "mongodb",
     "aggregation",
-    "helper"
+    "helper",
+    "data-processing",
+    "mongoose",
+    "nodejs",
+    "database",
+    "documents",
+    "query-builder",
+    "api",
+    "javascript",
+    "es6",
+    "promise",
+    "async",
+    "pipeline",
+    "data-analysis",
+    "data-transformation"
   ],
   "author": "Adhil Akbar",
   "license": "MIT",
