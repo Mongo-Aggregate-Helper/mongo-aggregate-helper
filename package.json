@@ -1,0 +1,28 @@
+{
+  "name": "mongo-aggregate-helper",
+  "version": "1.0.3",
+  "description": "A lightweight and user-friendly helper library for easily constructing and executing MongoDB aggregation pipelines. Streamline your data processing with a clean API and versatile functionality.",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "build": "babel lib -d dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mongodb",
+    "aggregation",
+    "helper"
+  ],
+  "author": "Adhil Akbar",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^8.7.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.3"
+  }
+}

@@ -1,0 +1,32 @@
+# Node modules  
+node_modules/  
+
+# Build output  
+dist/  
+
+# Logs  
+logs  
+*.log  
+npm-debug.log*  
+
+# Environment variables  
+.env  
+
+# Optional npm cache directory  
+.npm  
+
+# TypeScript  
+*.tsbuildinfo  
+
+# IDE and editor files  
+.idea/  
+.vscode/  
+*.swp  
+.DS_Store  
+
+# Coverage reports  
+coverage/  
+
+# Misc  
+package-lock.json  
+yarn-error.log
