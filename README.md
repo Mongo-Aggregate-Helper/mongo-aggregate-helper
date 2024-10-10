@@ -38,20 +38,6 @@ To install the package, run the following command:
 ```bash
 npm install mongo-aggregate-helper
 ```
-## Methods Available
-- `match(condition)`: Adds a `$match` stage.
-- `group(grouping)`: Adds a `$group` stage.
-- `sort(order)`: Adds a `$sort` stage
-- `project(fields)`: Adds a `$project` stage.
-- `lookup(from, localField, foreignField, as)`: Adds a `$lookup` stage.
-- `unwind(path)`: Adds a `$unwind` stage.
-- `addFields(fields)`: Adds a `$addFields` stage.
-- `paginate(skip, limit)`: Adds pagination using `$skip` and `$limit`.
-- `search(field, keyword, exactMatch)`: Adds a search capability, Allowing both exact and regex-based matching.
-- `facet(stages)`: Adds a `$facet` stage.
-- `count(fieldName)`: Adds a `$count` stage.
-- `execute()`: Execute the aggregation pipeline and return results.
-
 ## Usage
 
 #### Using MongoClient
