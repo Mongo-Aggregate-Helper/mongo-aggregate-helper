@@ -1,8 +1,3 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
 # Mongo Aggregate Helper
 
 ![npm](https://img.shields.io/npm/v/mongo-aggregate-helper) ![npm](https://img.shields.io/npm/l/mongo-aggregate-helper)
