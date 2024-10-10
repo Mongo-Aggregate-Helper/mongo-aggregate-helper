@@ -1,6 +1,6 @@
 {
   "name": "mongo-aggregate-helper",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A lightweight and user-friendly helper library for easily constructing and executing MongoDB aggregation pipelines. Streamline your data processing with a clean API and versatile functionality.",
   "main": "dist/index.js",
   "directories": {
@@ -41,12 +41,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mongo-Aggregate-Helper/mongo-aggregate-helper.git"
+    "url": "https://github.com/OpenPackStudio/mongo-aggregate-helper.git"
   },
   "bugs": {
-    "url": "https://github.com/Mongo-Aggregate-Helper/mongo-aggregate-helper/issues"
+    "url": "https://github.com/OpenPackStudio/mongo-aggregate-helper/issues"
   },
-  "homepage": "https://github.com/Mongo-Aggregate-Helper/mongo-aggregate-helper#readme",
+  "homepage": "https://github.com/OpenPackStudio/mongo-aggregate-helper#readme",
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/356Adhil"
