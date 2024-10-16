@@ -1,6 +1,6 @@
 {
   "name": "mongo-aggregate-helper",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "A lightweight and user-friendly helper library for easily constructing and executing MongoDB aggregation pipelines. Streamline your data processing with a clean API and versatile functionality.",
   "main": "dist/index.js",
   "directories": {

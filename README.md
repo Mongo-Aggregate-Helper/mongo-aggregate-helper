@@ -55,7 +55,7 @@ npm install mongo-aggregate-helper
 
 ```
 const MongoClient = require('mongodb').MongoClient;
-const { Aggregator } = require('mongo-aggregate-helper');
+const Aggregator = require("mongo-aggregate-helper");
 
 // Example MongoDB connection (replace with your connection URI)
 const uri = 'mongodb://localhost:27017';
@@ -94,7 +94,7 @@ runAggregation().catch(console.error);
 
 ```
 const mongoose = require('mongoose');
-const { Aggregator } = require('mongo-aggregate-helper');
+const Aggregator = require("mongo-aggregate-helper");
 
 // Connect to your MongoDB database
 mongoose.connect('mongodb://localhost:27017/your_database_name', {
@@ -158,85 +158,156 @@ Creates a new Aggregator instance.
 
 ---
 
-#### `.match(condition)`
+#### 1. `match(condition)`
 
-Adds a `$match` stage to the aggregation pipeline.
+Adds a `$match` stage to filter documents based on the provided condition.
 
-- **Parameters**:
-  - `condition`: An object defining query conditions to filter documents.
+**Parameters**:
 
----
+- `condition`: An object specifying the criteria to match.
 
-#### `.group(grouping)`
-
-Adds a `$group` stage to the aggregation pipeline.
-
-- **Parameters**:
-  - `grouping`: An object defining the grouping logic, including the `_id` field and any aggregation accumulator expressions (e.g., `$sum`, `$avg`).
+**Returns**: The current `Aggregator` instance.
 
 ---
 
-#### `.sort(order)`
+#### 2. `group(grouping)`
 
-Adds a `$sort` stage to the aggregation pipeline.
+Adds a `$group` stage to group documents based on specified keys.
 
-- **Parameters**:
-  - `order`: An object specifying the sort order (e.g., `{ age: 1 }` for ascending or `{ age: -1 }` for descending).
+**Parameters**:
 
----
+- `grouping`: An object defining the grouping criteria.
 
-#### `.project(fields)`
-
-Adds a `$project` stage to the aggregation pipeline.
-
-- **Parameters**:
-  - `fields`: An object defining which fields to include or exclude (e.g., `{ name: 1, age: 0 }` to include `name` and exclude `age`).
+**Returns**: The current `Aggregator` instance.
 
 ---
 
-#### `.lookup(from, localField, foreignField, as)`
+#### 3. `sort(order)`
 
-Adds a `$lookup` stage to the aggregation pipeline for performing left outer joins.
+Adds a `$sort` stage to sort documents.
 
-- **Parameters**:
-  - `from`: The collection to join.
-  - `localField`: The field from the input documents.
-  - `foreignField`: The field from the documents of the `from` collection.
-  - `as`: The name of the new array field to add to the input documents.
+**Parameters**:
 
----
+- `order`: An object specifying the sort order (e.g., `{ field: 1 }` for ascending).
 
-#### `.unwind(path)`
-
-Adds a `$unwind` stage to the aggregation pipeline to deconstruct an array field.
-
-- **Parameters**:
-  - `path`: The path to the array field (e.g., `'$items'`).
+**Returns**: The current `Aggregator` instance.
 
 ---
 
-#### `.addFields(fields)`
+#### 4. `project(fields)`
 
-Adds an `$addFields` stage to the aggregation pipeline to create new fields or modify existing ones.
+Adds a `$project` stage to specify which fields to include or exclude.
 
-- **Parameters**:
-  - `fields`: An object defining the fields to add or modify.
+**Parameters**:
+
+- `fields`: An object defining fields to include or exclude from documents.
+
+**Returns**: The current `Aggregator` instance.
 
 ---
 
-#### `.execute()`
+#### 5. `lookup(from, localField, foreignField, as)`
 
-Executes the aggregation pipeline.
+Adds a `$lookup` stage to perform a left outer join with another collection.
 
-- **Returns**:
-  - A promise that resolves to the aggregation results, or throws an error if the execution fails.
+**Parameters**:
+
+- `from`: The collection to join.
+- `localField`: The field from the input documents.
+- `foreignField`: The field from the documents of the `from` collection.
+- `as`: The name for the new array field to add to the input documents.
+
+**Returns**: The current `Aggregator` instance.
+
+---
+
+#### 6. `unwind(path)`
+
+Adds a `$unwind` stage to deconstruct an array field to generate a separate document for each element.
+
+**Parameters**:
+
+- `path`: The path to the array field to unwind.
+
+**Returns**: The current `Aggregator` instance.
+
+---
+
+#### 7. `addFields(fields)`
+
+Adds a `$addFields` stage to add new fields to documents.
+
+**Parameters**:
+
+- `fields`: An object defining the fields to add.
+
+**Returns**: The current `Aggregator` instance.
+
+---
+
+#### 8. `paginate(skip = 0, limit)`
+
+Adds pagination with `$skip` and optional `$limit`.
+
+**Parameters**:
+
+- `skip`: Number of documents to skip (default is `0`).
+- `limit`: Maximum number of documents to return. If `undefined` or `null`, the `$limit` stage is not added.
+
+**Returns**: The current `Aggregator` instance.
+
+---
+
+#### 9. `search(field, keyword, exactMatch = false)`
+
+Adds a text or regex search stage.
+
+**Parameters**:
+
+- `field`: The field to search.
+- `keyword`: The search keyword.
+- `exactMatch`: Boolean indicating whether to match exactly (default is `false`).
+
+**Returns**: The current `Aggregator` instance.
+
+---
+
+#### 10. `facet(stages)`
+
+Adds a `$facet` stage for multi-faceted results.
+
+**Parameters**:
+
+- `stages`: An object specifying multiple aggregation pipelines.
+
+**Returns**: The current `Aggregator` instance.
+
+---
+
+#### 11. `count(fieldName = "totalCount")`
+
+Adds a `$count` stage to get the total count of documents.
+
+**Parameters**:
+
+- `fieldName`: Name of the field to store the count (default is `"totalCount"`).
+
+**Returns**: The current `Aggregator` instance.
+
+---
+
+#### 12. `execute()`
+
+Executes the aggregation pipeline and returns the results.
+
+**Returns**: A Promise that resolves with the results of the aggregation.
 
 ### Example
 
 Here's an example demonstrating the use of the API:
 
 ```javascript
-const { Aggregator } = require("mongo-aggregate-helper");
+const Aggregator = require("mongo-aggregate-helper");
 
 const aggregator = new Aggregator(YourModel);
 
